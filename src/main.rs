@@ -172,6 +172,7 @@ pub async fn main() {
         "listening on {} using key {} and cert {}",
         addr, args.tlskey, args.tlscert
     );
+
     axum_server::bind_rustls(addr, config)
         .serve(app.into_make_service())
         .await
